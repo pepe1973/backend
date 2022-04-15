@@ -10,8 +10,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Route-ok
-app.use("/", require("./routes/mainRoute"));
+app.use("/unique", require("./routes/uniqueRoute"));
 app.use("/upload", require("./routes/uploadRoute"));
+app.use("/refresh", require("./routes/refreshRoute"));
+app.use("/", require("./routes/mainRoute"));
 
 // Adatbázis
 connection();
